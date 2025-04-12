@@ -19,3 +19,8 @@ func _create_seed_button(crop) -> void:
 	var seed_button := SEED_BUTTON_SCENE.instantiate()
 	%VBoxContainer.add_child(seed_button)
 	seed_button.set_seed_type(crop)
+	seed_button.pressed.connect(_select_crop_type.bind(crop))
+
+
+func _select_crop_type(crop: Crop) -> void:
+	_inventory.set_selected_crop(crop)
