@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1tf6lbwljb0x"]
+
+[ext_resource type="Script" uid="uid://dj8d36sj3iv17" path="res://world/plot.gd" id="1_m2t0g"]
+[ext_resource type="PackedScene" uid="uid://dj2vnh15hn57l" path="res://assets/nature/Models/GLTF format/ground_pathOpen.glb" id="1_v5jge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2t0g"]
+size = Vector3(1, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5kjt6"]
+size = Vector3(1, 0.2, 1)
+
+[node name="Plot" type="StaticBody3D"]
+script = ExtResource("1_m2t0g")
+
+[node name="Model" parent="." instance=ExtResource("1_v5jge")]
+
+[node name="ClickDetector" type="Area3D" parent="."]
+
+[node name="ClickDetectorShape" type="CollisionShape3D" parent="ClickDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_m2t0g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+shape = SubResource("BoxShape3D_5kjt6")
+
+[connection signal="input_event" from="ClickDetector" to="." method="_on_click_detector_input_event"]
