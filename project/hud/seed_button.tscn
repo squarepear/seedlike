@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dok1wiflcw6ld"]
+
+[ext_resource type="Script" uid="uid://ba1v0ptukmdfu" path="res://hud/seed_button.gd" id="1_3owtf"]
+
+[node name="SeedButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_3owtf")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

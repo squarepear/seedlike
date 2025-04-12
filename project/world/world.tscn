@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddr0cva22ryc4"]
+[gd_scene load_steps=9 format=3 uid="uid://ddr0cva22ryc4"]
 
 [ext_resource type="PackedScene" uid="uid://b1tf6lbwljb0x" path="res://world/plot.tscn" id="1_6xmxd"]
+[ext_resource type="PackedScene" uid="uid://bnlk8vd4xya6w" path="res://hud/HUD.tscn" id="2_4717r"]
+[ext_resource type="Script" uid="uid://dr01382pfvcxh" path="res://hud/inventory.gd" id="3_h5o24"]
+[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop.gd" id="4_mmdvd"]
+[ext_resource type="Resource" uid="uid://c4w0aigxcgxia" path="res://crops/carrot.tres" id="5_fn3g3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g312j"]
 albedo_color = Color(0.74902, 0.541176, 0.329412, 1)
@@ -31,3 +35,11 @@ shape = SubResource("SphereShape3D_6xmxd")
 
 [node name="Plot" parent="." instance=ExtResource("1_6xmxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178003, 0, 0.0387566)
+
+[node name="Hud" parent="." node_paths=PackedStringArray("_inventory") instance=ExtResource("2_4717r")]
+_inventory = NodePath("../Inventory")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_h5o24")
+_crops = Array[ExtResource("4_mmdvd")]([ExtResource("5_fn3g3"), ExtResource("5_fn3g3"), ExtResource("5_fn3g3")])
+metadata/_custom_type_script = "uid://dr01382pfvcxh"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Crop" load_steps=2 format=3 uid="uid://c4w0aigxcgxia"]
+
+[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop.gd" id="1_kk71m"]
+
+[resource]
+script = ExtResource("1_kk71m")
+name = "Carrot"
+metadata/_custom_type_script = "uid://c581idhsof6d5"
