@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bnlk8vd4xya6w" path="res://hud/HUD.tscn" id="2_4717r"]
 [ext_resource type="Script" uid="uid://dr01382pfvcxh" path="res://hud/inventory.gd" id="3_h5o24"]
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="4_mmdvd"]
-[ext_resource type="Resource" uid="uid://c4w0aigxcgxia" path="res://crops/carrot.tres" id="5_fn3g3"]
-[ext_resource type="Resource" uid="uid://cjuk0ei2qh3gt" path="res://crops/potato.tres" id="6_fn3g3"]
-[ext_resource type="Resource" uid="uid://dul2m78vhcwum" path="res://crops/onion.tres" id="6_sc4t8"]
+[ext_resource type="Resource" uid="uid://c4w0aigxcgxia" path="res://crops/crop_types/carrot.tres" id="5_fn3g3"]
+[ext_resource type="Resource" uid="uid://cjuk0ei2qh3gt" path="res://crops/crop_types/potato.tres" id="6_fn3g3"]
+[ext_resource type="Resource" uid="uid://dul2m78vhcwum" path="res://crops/crop_types/onion.tres" id="6_sc4t8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g312j"]
 albedo_color = Color(0.74902, 0.541176, 0.329412, 1)
