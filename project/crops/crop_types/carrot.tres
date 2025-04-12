@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="Crop" load_steps=2 format=3 uid="uid://c4w0aigxcgxia"]
+[gd_resource type="Resource" script_class="CropType" load_steps=3 format=3 uid="uid://c4w0aigxcgxia"]
 
-[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_kk71m"]
+[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_2ax4l"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4w8in"]
+size = Vector2(32, 64)
 
 [resource]
-script = ExtResource("1_kk71m")
+script = ExtResource("1_2ax4l")
 name = "Carrot"
+planted_texture = SubResource("PlaceholderTexture2D_4w8in")
 metadata/_custom_type_script = "uid://c581idhsof6d5"

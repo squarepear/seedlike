@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="Crop" load_steps=2 format=3 uid="uid://dul2m78vhcwum"]
+[gd_resource type="Resource" script_class="CropType" load_steps=3 format=3 uid="uid://dul2m78vhcwum"]
 
-[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_prih4"]
+[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_fbfpi"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gi2b3"]
+size = Vector2(32, 96)
 
 [resource]
-script = ExtResource("1_prih4")
+script = ExtResource("1_fbfpi")
 name = "Onion"
+planted_texture = SubResource("PlaceholderTexture2D_gi2b3")
 metadata/_custom_type_script = "uid://c581idhsof6d5"

@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="Crop" load_steps=2 format=3 uid="uid://cjuk0ei2qh3gt"]
+[gd_resource type="Resource" script_class="CropType" load_steps=3 format=3 uid="uid://cjuk0ei2qh3gt"]
 
-[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_leulf"]
+[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_ualp3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bioj"]
+size = Vector2(96, 64)
 
 [resource]
-script = ExtResource("1_leulf")
+script = ExtResource("1_ualp3")
 name = "Potato"
+planted_texture = SubResource("PlaceholderTexture2D_1bioj")
 metadata/_custom_type_script = "uid://c581idhsof6d5"
