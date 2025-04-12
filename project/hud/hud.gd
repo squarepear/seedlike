@@ -10,17 +10,17 @@ func _ready():
 
 
 func _set_seed_buttons() -> void:
-	var crop_types := _inventory.get_crop_types()
-	for crop in crop_types:
-		_create_seed_button(crop)
+	var seeds := _inventory.get_seeds()
+	for seed in seeds:
+		_create_seed_button(seed)
 
 
-func _create_seed_button(crop) -> void:
+func _create_seed_button(seed: CropType) -> void:
 	var seed_button := SEED_BUTTON_SCENE.instantiate()
 	%VBoxContainer.add_child(seed_button)
-	seed_button.set_seed_type(crop)
-	seed_button.pressed.connect(_select_crop_type.bind(crop))
+	seed_button.set_seed(seed)
+	seed_button.pressed.connect(_select_seed.bind(seed))
 
 
-func _select_crop_type(crop: Crop) -> void:
-	_inventory.set_selected_crop(crop)
+func _select_seed(seed: CropType) -> void:
+	_inventory.set_selected_seed(seed)

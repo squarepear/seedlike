@@ -1,5 +1,5 @@
 extends Button
 
 
-func set_seed_type(crop: Crop):
-	text = crop.name
+func set_seed(seed: CropType):
+	text = seed.name

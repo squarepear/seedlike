@@ -3,23 +3,23 @@ extends StaticBody3D
 
 @export var _inventory: Inventory
 
-var _planted_crop: Crop
+var _planted_crop_type: CropType
 
 
-func _plant(crop: Crop) -> void:
-	_planted_crop = crop
-	%Label3D.text = crop.name
+func _plant(seed: CropType) -> void:
+	_planted_crop_type = seed
+	%Label3D.text = seed.name
 
 
 func _try_plant() -> void:
-	if _planted_crop:
+	if _planted_crop_type:
 		return
 	
-	var selected_crop := _inventory.get_selected_crop()
-	if not selected_crop:
+	var selected_seed := _inventory.get_selected_seed()
+	if not selected_seed:
 		return
 	
-	_plant(selected_crop)
+	_plant(selected_seed)
 
 
 func _on_click_detector_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:

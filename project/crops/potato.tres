@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Crop" load_steps=2 format=3 uid="uid://cjuk0ei2qh3gt"]
 
-[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop.gd" id="1_leulf"]
+[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_leulf"]
 
 [resource]
 script = ExtResource("1_leulf")

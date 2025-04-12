@@ -1,21 +1,21 @@
 class_name Inventory
 extends Node
 
-@export var _crops: Array[Crop] = []
-var _selected_crop: Crop
+@export var _seeds: Array[CropType] = []
+var _selected_seed: CropType
 
 
-func add_crop(new_crop: Crop, number_of_crops: int) -> void:
-	_crops.append(new_crop)
+func add_seed(crop_type: CropType, number_of_seeds: int) -> void:
+	_seeds.append(crop_type)
 
 
-func set_selected_crop(crop: Crop) -> void:
-	_selected_crop = crop
+func set_selected_seed(crop_type: CropType) -> void:
+	_selected_seed = crop_type
 
 
-func get_selected_crop() -> Crop:
-	return _selected_crop
+func get_selected_seed() -> CropType:
+	return _selected_seed
 
 
-func get_crop_types() -> Array[Crop]:
-	return _crops
+func get_seeds() -> Array[CropType]:
+	return _seeds
