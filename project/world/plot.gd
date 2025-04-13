@@ -2,6 +2,7 @@ class_name Plot
 extends StaticBody3D
 
 const CROP_SCENE := preload("res://crops/crop.tscn")
+const CROP_OFFSET_RANGE := 0.1
 
 var _inventory: Inventory
 var _day_cycle: DayCycle
@@ -43,6 +44,7 @@ func _on_click_detector_input_event(camera: Node, event: InputEvent, event_posit
 func _create_crop(crop_type: CropType) -> void:
 	var crop := CROP_SCENE.instantiate()
 	add_child(crop)
+	crop.position += Vector3(randf_range(-CROP_OFFSET_RANGE, CROP_OFFSET_RANGE), 0, randf_range(-CROP_OFFSET_RANGE, CROP_OFFSET_RANGE))
 	crop.set_crop_type(crop_type)
 	_planted_crop = crop
 
