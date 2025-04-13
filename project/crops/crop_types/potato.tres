@@ -3,30 +3,27 @@
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_ualp3"]
 [ext_resource type="Script" uid="uid://r8hhhvvlql1w" path="res://crops/stage_info.gd" id="2_1bioj"]
 [ext_resource type="Texture2D" uid="uid://b3e6sm8dx6vjj" path="res://icon.svg" id="2_4x75w"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4x75w"]
-size = Vector2(96, 64)
+[ext_resource type="Texture2D" uid="uid://73m61tcrungt" path="res://crops/crop_types/potato_grown.png" id="4_hwf0j"]
+[ext_resource type="Texture2D" uid="uid://wjeinnro22q8" path="res://crops/crop_types/potato_seed.png" id="4_sejb8"]
 
 [sub_resource type="Resource" id="Resource_hwf0j"]
 script = ExtResource("2_1bioj")
 stage_length = 4
-stage_texture = SubResource("PlaceholderTexture2D_4x75w")
+stage_texture = ExtResource("4_sejb8")
 is_harvestable = false
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bioj"]
-size = Vector2(96, 96)
 
 [sub_resource type="Resource" id="Resource_4x75w"]
 script = ExtResource("2_1bioj")
 stage_length = 1
-stage_texture = SubResource("PlaceholderTexture2D_1bioj")
+stage_texture = ExtResource("4_hwf0j")
 is_harvestable = true
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 
 [resource]
 script = ExtResource("1_ualp3")
 name = "Potato"
+seed_packet_amount = 1
 food_yield = Vector2i(2, 5)
 stages = Array[ExtResource("2_1bioj")]([SubResource("Resource_hwf0j"), SubResource("Resource_4x75w")])
 seed_packet_foreground = ExtResource("2_4x75w")
