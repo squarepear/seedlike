@@ -3,24 +3,20 @@
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_fbfpi"]
 [ext_resource type="Texture2D" uid="uid://b3e6sm8dx6vjj" path="res://icon.svg" id="2_fdug4"]
 [ext_resource type="Script" uid="uid://r8hhhvvlql1w" path="res://crops/stage_info.gd" id="2_gi2b3"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fdug4"]
-size = Vector2(32, 96)
+[ext_resource type="Texture2D" uid="uid://b2me5g1cmi6xj" path="res://crops/crop_types/onion_seed.png" id="4_rkwft"]
+[ext_resource type="Texture2D" uid="uid://3ndsytbkdeci" path="res://crops/crop_types/onion_grown.png" id="5_xo7yy"]
 
 [sub_resource type="Resource" id="Resource_74y4e"]
 script = ExtResource("2_gi2b3")
 stage_length = 2
-stage_texture = SubResource("PlaceholderTexture2D_fdug4")
+stage_texture = ExtResource("4_rkwft")
 is_harvestable = false
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gi2b3"]
-size = Vector2(32, 128)
 
 [sub_resource type="Resource" id="Resource_fdug4"]
 script = ExtResource("2_gi2b3")
 stage_length = 1
-stage_texture = SubResource("PlaceholderTexture2D_gi2b3")
+stage_texture = ExtResource("5_xo7yy")
 is_harvestable = true
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 
