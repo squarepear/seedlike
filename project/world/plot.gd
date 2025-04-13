@@ -7,11 +7,13 @@ var _inventory: Inventory
 var _day_cycle: DayCycle
 
 var _planted_crop_type: CropType
+var _planted_crop: Crop
 
 
 func setup(inventory: Inventory, day_cycle: DayCycle) -> void:
 	_inventory = inventory
 	_day_cycle = day_cycle
+	_day_cycle.day_advanced.connect(_on_day_advanced)
 
 
 func _plant(seed: CropType) -> void:
@@ -39,3 +41,9 @@ func _create_crop(crop_type: CropType) -> void:
 	var crop := CROP_SCENE.instantiate()
 	add_child(crop)
 	crop.set_crop_type(crop_type)
+	_planted_crop = crop
+
+
+func _on_day_advanced() -> void:
+	if _planted_crop:
+		_planted_crop.age_up()

@@ -9,7 +9,7 @@ func get_total_time_to_grow() -> int:
 	return stages.reduce((func(total: int, x: StageInfo): return total + x.stage_length), 0)
 
 
-func get_current_stage(age) -> StageInfo:
+func get_current_stage(age: int) -> StageInfo:
 	for stage in stages:
 		age -= stage.stage_length
 
