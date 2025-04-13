@@ -6,6 +6,7 @@ signal food_amount_updated(current_amount_of_food: int)
 const FOOD_EATEN_PER_DAY: int = 3
 
 @export var _day_cycle: DayCycle
+@export var _community_population: CommunityPopulation
 
 var _current_amount_of_food: int = 10
 
@@ -16,8 +17,8 @@ func _ready() -> void:
 
 
 func _on_day_advanced() -> void:
-	_current_amount_of_food -= FOOD_EATEN_PER_DAY
-	clamp(_current_amount_of_food, 0, 100)
+	_current_amount_of_food -= FOOD_EATEN_PER_DAY * _community_population.get_population()
+	_current_amount_of_food = clamp(_current_amount_of_food, 0, 100)
 	food_amount_updated.emit(_current_amount_of_food)
 
 

@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddr0cva22ryc4"]
+[gd_scene load_steps=13 format=3 uid="uid://ddr0cva22ryc4"]
 
 [ext_resource type="PackedScene" uid="uid://bnlk8vd4xya6w" path="res://hud/HUD.tscn" id="2_4717r"]
-[ext_resource type="Script" uid="uid://dr01382pfvcxh" path="res://hud/inventory.gd" id="3_h5o24"]
+[ext_resource type="Script" uid="uid://dr01382pfvcxh" path="res://systems/inventory.gd" id="3_h5o24"]
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="4_mmdvd"]
 [ext_resource type="Resource" uid="uid://c4w0aigxcgxia" path="res://crops/crop_types/carrot.tres" id="5_fn3g3"]
 [ext_resource type="Resource" uid="uid://cjuk0ei2qh3gt" path="res://crops/crop_types/potato.tres" id="6_fn3g3"]
 [ext_resource type="Resource" uid="uid://dul2m78vhcwum" path="res://crops/crop_types/onion.tres" id="6_sc4t8"]
-[ext_resource type="Script" uid="uid://btmst1pslvjew" path="res://hud/food_storage.gd" id="7_4papg"]
-[ext_resource type="Script" uid="uid://vfgjitl24hoo" path="res://day_cycle.gd" id="8_ai45w"]
-[ext_resource type="Script" uid="uid://bbetn1fcj0v3m" path="res://plot_generator.gd" id="9_4papg"]
+[ext_resource type="Script" uid="uid://btmst1pslvjew" path="res://systems/food_storage.gd" id="7_4papg"]
+[ext_resource type="Script" uid="uid://vfgjitl24hoo" path="res://systems/day_cycle.gd" id="8_ai45w"]
+[ext_resource type="Script" uid="uid://cpe8tdjltmpkm" path="res://systems/member_manager.gd" id="8_fyhu2"]
+[ext_resource type="Script" uid="uid://bbetn1fcj0v3m" path="res://world/plot_generator.gd" id="9_4papg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g312j"]
 albedo_color = Color(0.74902, 0.541176, 0.329412, 1)
@@ -42,10 +43,16 @@ metadata/_custom_type_script = "uid://dr01382pfvcxh"
 script = ExtResource("8_ai45w")
 metadata/_custom_type_script = "uid://vfgjitl24hoo"
 
-[node name="FoodStorage" type="Node" parent="." node_paths=PackedStringArray("_day_cycle")]
+[node name="FoodStorage" type="Node" parent="." node_paths=PackedStringArray("_day_cycle", "_community_population")]
 script = ExtResource("7_4papg")
 _day_cycle = NodePath("../DayCycle")
+_community_population = NodePath("../CommunityPopulation")
 metadata/_custom_type_script = "uid://btmst1pslvjew"
+
+[node name="CommunityPopulation" type="Node" parent="." node_paths=PackedStringArray("_day_cycle")]
+script = ExtResource("8_fyhu2")
+_day_cycle = NodePath("../DayCycle")
+metadata/_custom_type_script = "uid://cpe8tdjltmpkm"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
