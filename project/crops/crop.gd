@@ -19,3 +19,8 @@ func _set_stage(stage_info: StageInfo) -> void:
 func age_up():
 	_current_age += 1
 	_set_stage(_crop_type.get_current_stage(_current_age))
+
+
+func try_harvest() -> void:
+	if _crop_type.get_current_stage(_current_age).is_harvestable:
+		queue_free()

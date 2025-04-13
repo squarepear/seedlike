@@ -1,10 +1,7 @@
-[gd_resource type="Resource" script_class="CropType" load_steps=6 format=3 uid="uid://cjuk0ei2qh3gt"]
+[gd_resource type="Resource" script_class="CropType" load_steps=7 format=3 uid="uid://cjuk0ei2qh3gt"]
 
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_ualp3"]
 [ext_resource type="Script" uid="uid://r8hhhvvlql1w" path="res://crops/stage_info.gd" id="2_1bioj"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bioj"]
-size = Vector2(96, 64)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4x75w"]
 size = Vector2(96, 64)
@@ -13,11 +10,21 @@ size = Vector2(96, 64)
 script = ExtResource("2_1bioj")
 stage_length = 4
 stage_texture = SubResource("PlaceholderTexture2D_4x75w")
+is_harvestable = false
+metadata/_custom_type_script = "uid://r8hhhvvlql1w"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bioj"]
+size = Vector2(96, 96)
+
+[sub_resource type="Resource" id="Resource_4x75w"]
+script = ExtResource("2_1bioj")
+stage_length = 1
+stage_texture = SubResource("PlaceholderTexture2D_1bioj")
+is_harvestable = true
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 
 [resource]
 script = ExtResource("1_ualp3")
 name = "Potato"
-planted_texture = SubResource("PlaceholderTexture2D_1bioj")
-stages = Array[ExtResource("2_1bioj")]([SubResource("Resource_hwf0j")])
+stages = Array[ExtResource("2_1bioj")]([SubResource("Resource_hwf0j"), SubResource("Resource_4x75w")])
 metadata/_custom_type_script = "uid://c581idhsof6d5"

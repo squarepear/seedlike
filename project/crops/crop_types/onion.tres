@@ -1,10 +1,7 @@
-[gd_resource type="Resource" script_class="CropType" load_steps=6 format=3 uid="uid://dul2m78vhcwum"]
+[gd_resource type="Resource" script_class="CropType" load_steps=7 format=3 uid="uid://dul2m78vhcwum"]
 
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_fbfpi"]
 [ext_resource type="Script" uid="uid://r8hhhvvlql1w" path="res://crops/stage_info.gd" id="2_gi2b3"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gi2b3"]
-size = Vector2(32, 96)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fdug4"]
 size = Vector2(32, 96)
@@ -13,11 +10,21 @@ size = Vector2(32, 96)
 script = ExtResource("2_gi2b3")
 stage_length = 2
 stage_texture = SubResource("PlaceholderTexture2D_fdug4")
+is_harvestable = false
+metadata/_custom_type_script = "uid://r8hhhvvlql1w"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gi2b3"]
+size = Vector2(32, 128)
+
+[sub_resource type="Resource" id="Resource_fdug4"]
+script = ExtResource("2_gi2b3")
+stage_length = 1
+stage_texture = SubResource("PlaceholderTexture2D_gi2b3")
+is_harvestable = true
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 
 [resource]
 script = ExtResource("1_fbfpi")
 name = "Onion"
-planted_texture = SubResource("PlaceholderTexture2D_gi2b3")
-stages = Array[ExtResource("2_gi2b3")]([SubResource("Resource_74y4e")])
+stages = Array[ExtResource("2_gi2b3")]([SubResource("Resource_74y4e"), SubResource("Resource_fdug4")])
 metadata/_custom_type_script = "uid://c581idhsof6d5"

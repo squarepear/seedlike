@@ -10,6 +10,7 @@ size = Vector2(32, 32)
 script = ExtResource("2_4w8in")
 stage_length = 3
 stage_texture = SubResource("PlaceholderTexture2D_4w8in")
+is_harvestable = false
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywexx"]
@@ -19,6 +20,7 @@ size = Vector2(32, 64)
 script = ExtResource("2_4w8in")
 stage_length = 7
 stage_texture = SubResource("PlaceholderTexture2D_ywexx")
+is_harvestable = true
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 
 [resource]
