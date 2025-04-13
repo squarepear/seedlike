@@ -9,7 +9,6 @@ var _current_age: int = 0
 
 func set_crop_type(crop_type: CropType) -> void:
 	_crop_type = crop_type
-	%Label3D.text = _crop_type.name
 	_set_stage(crop_type.stages[0])
 
 
