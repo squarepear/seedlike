@@ -26,7 +26,7 @@ mesh = SubResource("BoxMesh_6xmxd")
 transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, 0, 3.07624, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.662659, 0.748921, 0, -0.748921, 0.662659, 0, 4.24802, 4.31642)
+transform = Transform3D(1, 0, 0, 0, 0.879781, 0.475379, 0, -0.475379, 0.879781, 0, 3.34555, 5.86444)
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_h5o24")
@@ -46,8 +46,8 @@ _day_cycle = NodePath("../../DayCycle")
 
 [node name="PlotGenerator" type="Node3D" parent="." node_paths=PackedStringArray("_inventory", "_day_cycle")]
 script = ExtResource("9_4papg")
-_height = 5
-_width = 5
+_height = 7
+_width = 7
 _inventory = NodePath("../Inventory")
 _day_cycle = NodePath("../DayCycle")
 metadata/_custom_type_script = "uid://bbetn1fcj0v3m"

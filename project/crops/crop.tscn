@@ -1,16 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjvd8ngwt5ehb"]
 
-[ext_resource type="Texture2D" uid="uid://cl3s2wbpipc7c" path="res://crops/placeholder_crop.png" id="1_0ivdy"]
 [ext_resource type="Script" uid="uid://c61cjxpao3pma" path="res://crops/crop.gd" id="2_bux5x"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0ivdy"]
+size = Vector2(512, 1024)
+
 [node name="Crop" type="Sprite3D"]
-pixel_size = 0.0078
+pixel_size = 0.002
 billboard = 2
-texture = ExtResource("1_0ivdy")
+texture = SubResource("PlaceholderTexture2D_0ivdy")
 script = ExtResource("2_bux5x")
 
 [node name="Label3D" type="Label3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40405, 0)
+visible = false
 billboard = 2
 text = "THIS IS A CROP!"
