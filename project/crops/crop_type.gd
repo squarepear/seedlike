@@ -2,9 +2,10 @@ class_name CropType
 extends Resource
 
 @export var name: String
+@export var seed_packet_amount := 1
 @export var food_yield := Vector2i(1, 1)
-@export var stages: Array[StageInfo]
 
+@export var stages: Array[StageInfo]
 @export var seed_packet_foreground: Texture2D
 @export var seed_packet_background: Color
 

@@ -27,6 +27,7 @@ metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 [resource]
 script = ExtResource("1_fbfpi")
 name = "Onion"
+seed_packet_amount = 2
 food_yield = Vector2i(1, 1)
 stages = Array[ExtResource("2_gi2b3")]([SubResource("Resource_74y4e"), SubResource("Resource_fdug4")])
 seed_packet_foreground = ExtResource("2_fdug4")
