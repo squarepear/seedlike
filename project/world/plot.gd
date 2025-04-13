@@ -57,5 +57,5 @@ func _on_day_advanced() -> void:
 		_planted_crop.age_up()
 
 
-func _on_crop_harvested() -> void:
-	_food_storage.add_food(1)
+func _on_crop_harvested(food_yield: int) -> void:
+	_food_storage.add_food(food_yield)

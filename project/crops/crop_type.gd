@@ -2,6 +2,7 @@ class_name CropType
 extends Resource
 
 @export var name: String
+@export var food_yield := Vector2i(1, 1)
 @export var stages: Array[StageInfo]
 
 
@@ -17,3 +18,7 @@ func get_current_stage(age: int) -> StageInfo:
 			return stage
 
 	return stages.back()
+
+
+func get_food_yield() -> int:
+	return randi_range(food_yield.x, food_yield.y)

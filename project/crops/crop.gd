@@ -1,7 +1,7 @@
 class_name Crop
 extends Sprite3D
 
-signal harvested
+signal harvested(food_yield: int)
 
 var _crop_type: CropType
 var _current_age: int = 0
@@ -25,5 +25,5 @@ func age_up() -> void:
 
 func try_harvest() -> void:
 	if _crop_type.get_current_stage(_current_age).is_harvestable:
-		harvested.emit()
+		harvested.emit(_crop_type.get_food_yield())
 		queue_free()

@@ -26,5 +26,6 @@ metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 [resource]
 script = ExtResource("1_ualp3")
 name = "Potato"
+food_yield = Vector2i(2, 5)
 stages = Array[ExtResource("2_1bioj")]([SubResource("Resource_hwf0j"), SubResource("Resource_4x75w")])
 metadata/_custom_type_script = "uid://c581idhsof6d5"
