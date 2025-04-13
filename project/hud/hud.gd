@@ -3,6 +3,7 @@ extends Control
 const SEED_BUTTON_SCENE := preload("res://hud/seed_button.tscn")
 
 @export var _inventory: Inventory
+@export var _day_cycle: DayCycle
 
 
 func _ready():
@@ -24,3 +25,7 @@ func _create_seed_button(seed: CropType) -> void:
 
 func _select_seed(seed: CropType) -> void:
 	_inventory.set_selected_seed(seed)
+
+
+func _on_advance_day_button_pressed() -> void:
+	_day_cycle.advance_day()

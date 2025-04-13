@@ -3,9 +3,15 @@ extends StaticBody3D
 
 const CROP_SCENE := preload("res://crops/crop.tscn")
 
-@export var _inventory: Inventory
+var _inventory: Inventory
+var _day_cycle: DayCycle
 
 var _planted_crop_type: CropType
+
+
+func setup(inventory: Inventory, day_cycle: DayCycle) -> void:
+	_inventory = inventory
+	_day_cycle = day_cycle
 
 
 func _plant(seed: CropType) -> void:

@@ -1,12 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://ddr0cva22ryc4"]
 
-[ext_resource type="PackedScene" uid="uid://b1tf6lbwljb0x" path="res://world/plot.tscn" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://bnlk8vd4xya6w" path="res://hud/HUD.tscn" id="2_4717r"]
 [ext_resource type="Script" uid="uid://dr01382pfvcxh" path="res://hud/inventory.gd" id="3_h5o24"]
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="4_mmdvd"]
 [ext_resource type="Resource" uid="uid://c4w0aigxcgxia" path="res://crops/crop_types/carrot.tres" id="5_fn3g3"]
 [ext_resource type="Resource" uid="uid://cjuk0ei2qh3gt" path="res://crops/crop_types/potato.tres" id="6_fn3g3"]
 [ext_resource type="Resource" uid="uid://dul2m78vhcwum" path="res://crops/crop_types/onion.tres" id="6_sc4t8"]
+[ext_resource type="Script" uid="uid://vfgjitl24hoo" path="res://day_cycle.gd" id="8_ai45w"]
+[ext_resource type="Script" uid="uid://bbetn1fcj0v3m" path="res://plot_generator.gd" id="9_4papg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g312j"]
 albedo_color = Color(0.74902, 0.541176, 0.329412, 1)
@@ -14,8 +15,6 @@ albedo_color = Color(0.74902, 0.541176, 0.329412, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_6xmxd"]
 material = SubResource("StandardMaterial3D_g312j")
 size = Vector3(20, 1, 20)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_6xmxd"]
 
 [node name="World" type="Node3D"]
 
@@ -29,26 +28,26 @@ transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.662659, 0.748921, 0, -0.748921, 0.662659, 0, 4.24802, 4.31642)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22133, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_6xmxd")
-
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_h5o24")
 _seeds = Array[ExtResource("4_mmdvd")]([ExtResource("6_sc4t8"), ExtResource("5_fn3g3"), ExtResource("6_fn3g3")])
 metadata/_custom_type_script = "uid://dr01382pfvcxh"
 
-[node name="Plot" parent="." node_paths=PackedStringArray("_inventory") instance=ExtResource("1_6xmxd")]
-_inventory = NodePath("../Inventory")
-
-[node name="Plot2" parent="." node_paths=PackedStringArray("_inventory") instance=ExtResource("1_6xmxd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-_inventory = NodePath("../Inventory")
+[node name="DayCycle" type="Node" parent="."]
+script = ExtResource("8_ai45w")
+metadata/_custom_type_script = "uid://vfgjitl24hoo"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Hud" parent="CanvasLayer" node_paths=PackedStringArray("_inventory") instance=ExtResource("2_4717r")]
+[node name="Hud" parent="CanvasLayer" node_paths=PackedStringArray("_inventory", "_day_cycle") instance=ExtResource("2_4717r")]
 _inventory = NodePath("../../Inventory")
+_day_cycle = NodePath("../../DayCycle")
+
+[node name="PlotGenerator" type="Node3D" parent="." node_paths=PackedStringArray("_inventory", "_day_cycle")]
+script = ExtResource("9_4papg")
+_height = 5
+_width = 5
+_inventory = NodePath("../Inventory")
+_day_cycle = NodePath("../DayCycle")
+metadata/_custom_type_script = "uid://bbetn1fcj0v3m"
