@@ -54,6 +54,7 @@ offset_bottom = 54.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 24
 text = "CROP NAME"
+horizontal_alignment = 1
 
 [node name="AmountLabel" type="Label" parent="."]
 unique_name_in_owner = true
