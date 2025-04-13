@@ -2,14 +2,12 @@
 
 [ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_2ax4l"]
 [ext_resource type="Script" uid="uid://r8hhhvvlql1w" path="res://crops/stage_info.gd" id="2_4w8in"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4w8in"]
-size = Vector2(32, 32)
+[ext_resource type="Texture2D" uid="uid://dwsl5g6ffdke7" path="res://crops/crop_types/carrot_seed.png" id="3_ywexx"]
 
 [sub_resource type="Resource" id="Resource_ywexx"]
 script = ExtResource("2_4w8in")
 stage_length = 3
-stage_texture = SubResource("PlaceholderTexture2D_4w8in")
+stage_texture = ExtResource("3_ywexx")
 is_harvestable = false
 metadata/_custom_type_script = "uid://r8hhhvvlql1w"
 
