@@ -31,7 +31,11 @@ transform = Transform3D(1, 0, 0, 0, 0.879781, 0.475379, 0, -0.475379, 0.879781, 
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_h5o24")
-_seeds = Array[ExtResource("4_mmdvd")]([ExtResource("6_sc4t8"), ExtResource("5_fn3g3"), ExtResource("6_fn3g3")])
+_seeds = Dictionary[ExtResource("4_mmdvd"), int]({
+ExtResource("5_fn3g3"): 7,
+ExtResource("6_fn3g3"): 3,
+ExtResource("6_sc4t8"): 5
+})
 metadata/_custom_type_script = "uid://dr01382pfvcxh"
 
 [node name="DayCycle" type="Node" parent="."]

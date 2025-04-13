@@ -30,7 +30,10 @@ func _try_plant() -> void:
 	var selected_seed := _inventory.get_selected_seed()
 	if not selected_seed:
 		return
-	
+
+	if not _inventory.has_seed(selected_seed):
+		return
+
 	_plant(selected_seed)
 
 
@@ -49,6 +52,7 @@ func _create_crop(crop_type: CropType) -> void:
 	crop.position += Vector3(randf_range(-CROP_OFFSET_RANGE, CROP_OFFSET_RANGE), 0, randf_range(-CROP_OFFSET_RANGE, CROP_OFFSET_RANGE))
 	crop.set_crop_type(crop_type)
 	_planted_crop = crop
+	_inventory.remove_seed(crop_type)
 	crop.harvested.connect(_on_crop_harvested)
 
 
