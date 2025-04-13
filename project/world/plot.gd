@@ -6,14 +6,16 @@ const CROP_OFFSET_RANGE := 0.1
 
 var _inventory: Inventory
 var _day_cycle: DayCycle
+var _food_storage: FoodStorage
 
 var _planted_crop: Crop
 
 
-func setup(inventory: Inventory, day_cycle: DayCycle) -> void:
+func setup(inventory: Inventory, day_cycle: DayCycle, food_storage: FoodStorage) -> void:
 	_inventory = inventory
 	_day_cycle = day_cycle
 	_day_cycle.day_advanced.connect(_on_day_advanced)
+	_food_storage = food_storage
 
 
 func _plant(seed: CropType) -> void:
@@ -47,8 +49,13 @@ func _create_crop(crop_type: CropType) -> void:
 	crop.position += Vector3(randf_range(-CROP_OFFSET_RANGE, CROP_OFFSET_RANGE), 0, randf_range(-CROP_OFFSET_RANGE, CROP_OFFSET_RANGE))
 	crop.set_crop_type(crop_type)
 	_planted_crop = crop
+	crop.harvested.connect(_on_crop_harvested)
 
 
 func _on_day_advanced() -> void:
 	if _planted_crop:
 		_planted_crop.age_up()
+
+
+func _on_crop_harvested() -> void:
+	_food_storage.add_food(1)

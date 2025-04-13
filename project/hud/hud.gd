@@ -4,10 +4,14 @@ const SEED_BUTTON_SCENE := preload("res://hud/seed_button.tscn")
 
 @export var _inventory: Inventory
 @export var _day_cycle: DayCycle
+@export var _food_storage: FoodStorage
+
+@onready var _food_bar : ProgressBar = %FoodBar
 
 
-func _ready():
+func _ready() -> void:
 	_set_seed_buttons()
+	_food_storage.food_amount_updated.connect(_on_food_amount_updated)
 
 
 func _set_seed_buttons() -> void:
@@ -18,7 +22,7 @@ func _set_seed_buttons() -> void:
 
 func _create_seed_button(seed: CropType) -> void:
 	var seed_button := SEED_BUTTON_SCENE.instantiate()
-	%VBoxContainer.add_child(seed_button)
+	%SeedContainer.add_child(seed_button)
 	seed_button.set_seed(seed)
 	seed_button.pressed.connect(_select_seed.bind(seed))
 
@@ -29,3 +33,7 @@ func _select_seed(seed: CropType) -> void:
 
 func _on_advance_day_button_pressed() -> void:
 	_day_cycle.advance_day()
+
+
+func _on_food_amount_updated(food_amount: int) -> void:
+	_food_bar.value = food_amount
