@@ -26,8 +26,8 @@ func _create_seed_button(seed: CropType) -> void:
 	seed_button.set_seed(seed)
 	seed_button.set_amount(_inventory.get_seed_amount(seed))
 	seed_button.pressed.connect(_select_seed.bind(seed))
-	_inventory.seed_added.connect(func(crop_type: CropType, amount: int): if crop_type == seed: seed_button.set_amount(_inventory.get_seed_amount(seed)))
-	_inventory.seed_removed.connect(func(crop_type: CropType, amount: int): if crop_type == seed: seed_button.set_amount(_inventory.get_seed_amount(seed)))
+	_inventory.seed_added.connect(func(crop_type: CropType, _amount: int): if crop_type == seed: seed_button.set_amount(_inventory.get_seed_amount(seed)))
+	_inventory.seed_removed.connect(func(crop_type: CropType, _amount: int): if crop_type == seed: seed_button.set_amount(_inventory.get_seed_amount(seed)))
 
 
 func _select_seed(seed: CropType) -> void:

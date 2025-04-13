@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddr0cva22ryc4"]
+[gd_scene load_steps=14 format=3 uid="uid://ddr0cva22ryc4"]
 
 [ext_resource type="PackedScene" uid="uid://bnlk8vd4xya6w" path="res://hud/HUD.tscn" id="2_4717r"]
 [ext_resource type="Script" uid="uid://dr01382pfvcxh" path="res://systems/inventory.gd" id="3_h5o24"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://vfgjitl24hoo" path="res://systems/day_cycle.gd" id="8_ai45w"]
 [ext_resource type="Script" uid="uid://cpe8tdjltmpkm" path="res://systems/member_manager.gd" id="8_fyhu2"]
 [ext_resource type="Script" uid="uid://bbetn1fcj0v3m" path="res://world/plot_generator.gd" id="9_4papg"]
+[ext_resource type="PackedScene" uid="uid://d1ltmw2n381wr" path="res://hud/seed_library.tscn" id="10_ov2xu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g312j"]
 albedo_color = Color(0.74902, 0.541176, 0.329412, 1)
@@ -61,6 +62,12 @@ follow_viewport_enabled = true
 _inventory = NodePath("../../Inventory")
 _day_cycle = NodePath("../../DayCycle")
 _food_storage = NodePath("../../FoodStorage")
+
+[node name="SeedLibrary" parent="CanvasLayer" node_paths=PackedStringArray("_inventory", "_day_cycle") instance=ExtResource("10_ov2xu")]
+offset_right = -220.0
+_inventory = NodePath("../../Inventory")
+_day_cycle = NodePath("../../DayCycle")
+seed_options = Array[ExtResource("4_mmdvd")]([ExtResource("5_fn3g3"), ExtResource("6_sc4t8"), ExtResource("6_fn3g3")])
 
 [node name="PlotGenerator" type="Node3D" parent="." node_paths=PackedStringArray("_inventory", "_day_cycle", "_food_storage")]
 script = ExtResource("9_4papg")

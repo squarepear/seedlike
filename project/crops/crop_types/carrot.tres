@@ -24,4 +24,6 @@ script = ExtResource("1_2ax4l")
 name = "Carrot"
 food_yield = Vector2i(1, 1)
 stages = Array[ExtResource("2_4w8in")]([SubResource("Resource_ywexx"), SubResource("Resource_mf3ij")])
+seed_packet_foreground = ExtResource("4_mf3ij")
+seed_packet_background = Color(0.719987, 0.273264, 0, 1)
 metadata/_custom_type_script = "uid://c581idhsof6d5"

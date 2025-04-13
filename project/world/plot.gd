@@ -41,7 +41,7 @@ func _try_harvest() -> void:
 	_planted_crop.try_harvest()
 	
 
-func _on_click_detector_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+func _on_click_detector_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		_try_plant()
 

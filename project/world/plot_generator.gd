@@ -18,7 +18,7 @@ func _ready() -> void:
 func _generate_plots() -> void:
 	for x in _height:
 		for z in _width:
-			_create_new_plot(x - (_width - 1) / 2, z - (_height - 1) / 2)
+			_create_new_plot(x - (_width - 1) / 2.0, z - (_height - 1) / 2.0)
 
 
 func _create_new_plot(x: int, z: int) -> void:
