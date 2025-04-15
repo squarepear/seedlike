@@ -90,6 +90,7 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 0.879781, 0.475379, 0, -0.475379, 0.879781, 0.924672, 2.8736, 2.92123)
 
 [node name="SeedLibrary" parent="CanvasLayer/HBoxContainer/Control" node_paths=PackedStringArray("_inventory", "_day_cycle") instance=ExtResource("10_ov2xu")]
+visible = false
 layout_mode = 1
 _inventory = NodePath("../../../../SYSTEMS/Inventory")
 _day_cycle = NodePath("../../../../SYSTEMS/DayCycle")

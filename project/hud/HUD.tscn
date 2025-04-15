@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnlk8vd4xya6w"]
+[gd_scene load_steps=3 format=3 uid="uid://bnlk8vd4xya6w"]
 
 [ext_resource type="Script" uid="uid://s0vcvophrgtw" path="res://hud/hud.gd" id="1_g1j8k"]
+[ext_resource type="Script" uid="uid://ldvd6qhyoq2m" path="res://hud/seed_o_dex.gd" id="2_xx08g"]
 
 [node name="Hud" type="Control"]
 custom_minimum_size = Vector2(288, 1080)
@@ -64,11 +65,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 fill_mode = 3
 
-[node name="SeedContainer" type="VBoxContainer" parent="PanelContainer/UIContainer"]
+[node name="SeedODex" type="Container" parent="PanelContainer/UIContainer"]
 unique_name_in_owner = true
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
-alignment = 1
+script = ExtResource("2_xx08g")
+metadata/_custom_type_script = "uid://ldvd6qhyoq2m"
 
 [node name="AdvanceDayButton" type="Button" parent="PanelContainer/UIContainer"]
 layout_mode = 2
