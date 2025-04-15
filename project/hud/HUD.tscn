@@ -32,10 +32,35 @@ custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 alignment = 1
 
-[node name="FoodBar" type="ProgressBar" parent="PanelContainer/UIContainer/HBoxContainer"]
+[node name="VegetableBar" type="ProgressBar" parent="PanelContainer/UIContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+fill_mode = 3
+
+[node name="FruitBar" type="ProgressBar" parent="PanelContainer/UIContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+fill_mode = 3
+
+[node name="GrainBar" type="ProgressBar" parent="PanelContainer/UIContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+fill_mode = 3
+
+[node name="ProteinBar" type="ProgressBar" parent="PanelContainer/UIContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 fill_mode = 3
 

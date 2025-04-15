@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CropType" load_steps=7 format=3 uid="uid://70kpcrjovds6"]
+
+[ext_resource type="Script" uid="uid://c581idhsof6d5" path="res://crops/crop_type.gd" id="1_ghnev"]
+[ext_resource type="Script" uid="uid://r8hhhvvlql1w" path="res://crops/stage_info.gd" id="2_qat10"]
+[ext_resource type="Texture2D" uid="uid://b3e6sm8dx6vjj" path="res://icon.svg" id="3_qat10"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_86ev6"]
+size = Vector2(100, 100)
+
+[sub_resource type="Resource" id="Resource_sk77a"]
+script = ExtResource("2_qat10")
+stage_length = 3
+stage_texture = SubResource("PlaceholderTexture2D_86ev6")
+is_harvestable = false
+metadata/_custom_type_script = "uid://r8hhhvvlql1w"
+
+[sub_resource type="Resource" id="Resource_px1nw"]
+script = ExtResource("2_qat10")
+stage_length = 3
+stage_texture = ExtResource("3_qat10")
+is_harvestable = true
+metadata/_custom_type_script = "uid://r8hhhvvlql1w"
+
+[resource]
+script = ExtResource("1_ghnev")
+name = "Watermelon"
+seed_packet_amount = 5
+food_yield = Vector2i(1, 3)
+stages = Array[ExtResource("2_qat10")]([SubResource("Resource_sk77a"), SubResource("Resource_px1nw")])
+seed_packet_background = Color(1, 0.328736, 0.393116, 1)
+category = 1
+metadata/_custom_type_script = "uid://c581idhsof6d5"

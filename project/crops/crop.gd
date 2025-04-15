@@ -12,6 +12,10 @@ func set_crop_type(crop_type: CropType) -> void:
 	_set_stage(crop_type.stages[0])
 
 
+func get_crop_type() -> CropType:
+	return _crop_type
+
+
 func _set_stage(stage_info: StageInfo) -> void:
 	texture = stage_info.stage_texture
 	offset.y = stage_info.stage_texture.get_height() / 2

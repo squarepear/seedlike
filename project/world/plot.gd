@@ -62,4 +62,4 @@ func _on_day_advanced() -> void:
 
 
 func _on_crop_harvested(food_yield: int) -> void:
-	_food_storage.add_food(food_yield)
+	_food_storage.add_food(_planted_crop.get_crop_type().category, food_yield)

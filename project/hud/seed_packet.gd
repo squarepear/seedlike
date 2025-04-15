@@ -8,9 +8,10 @@ var _seed : CropType
 @onready var _background = %BackgroundPanel
 
 
-func set_seed(seed: CropType) -> void:
-	_seed = seed
+func set_seed(seed_type: CropType) -> void:
+	_seed = seed_type
 	_update_visuals()
+
 
 func set_amount(amount: int) -> void:
 	_amount_label.text = 'x%d' % amount

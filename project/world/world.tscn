@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddr0cva22ryc4"]
+[gd_scene load_steps=13 format=3 uid="uid://ddr0cva22ryc4"]
 
 [ext_resource type="PackedScene" uid="uid://bnlk8vd4xya6w" path="res://hud/HUD.tscn" id="2_4717r"]
 [ext_resource type="Script" uid="uid://dr01382pfvcxh" path="res://systems/inventory.gd" id="3_h5o24"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cpe8tdjltmpkm" path="res://systems/member_manager.gd" id="8_fyhu2"]
 [ext_resource type="Script" uid="uid://bbetn1fcj0v3m" path="res://world/plot_generator.gd" id="9_4papg"]
 [ext_resource type="PackedScene" uid="uid://d1ltmw2n381wr" path="res://hud/seed_library.tscn" id="10_ov2xu"]
+[ext_resource type="Resource" uid="uid://70kpcrjovds6" path="res://crops/crop_types/watermelon.tres" id="11_mad0u"]
 
 [node name="World" type="Node3D"]
 
@@ -33,7 +34,8 @@ script = ExtResource("3_h5o24")
 _seeds = Dictionary[ExtResource("4_mmdvd"), int]({
 ExtResource("5_fn3g3"): 7,
 ExtResource("6_fn3g3"): 3,
-ExtResource("6_sc4t8"): 5
+ExtResource("6_sc4t8"): 5,
+ExtResource("11_mad0u"): 1
 })
 metadata/_custom_type_script = "uid://dr01382pfvcxh"
 
@@ -90,7 +92,7 @@ transform = Transform3D(1, 0, 0, 0, 0.879781, 0.475379, 0, -0.475379, 0.879781, 
 layout_mode = 1
 _inventory = NodePath("../../../../SYSTEMS/Inventory")
 _day_cycle = NodePath("../../../../SYSTEMS/DayCycle")
-seed_options = Array[ExtResource("4_mmdvd")]([ExtResource("5_fn3g3"), ExtResource("6_sc4t8"), ExtResource("6_fn3g3")])
+seed_options = Array[ExtResource("4_mmdvd")]([ExtResource("11_mad0u"), ExtResource("6_sc4t8"), ExtResource("6_fn3g3")])
 
 [node name="Hud" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("_inventory", "_day_cycle", "_food_storage") instance=ExtResource("2_4717r")]
 layout_mode = 2
