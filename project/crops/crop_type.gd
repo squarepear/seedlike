@@ -8,6 +8,7 @@ extends Resource
 @export var stages: Array[StageInfo]
 @export var seed_packet_foreground: Texture2D
 @export var seed_packet_background: Color
+@export_enum ("vegetable", "fruit", "grain", "protein") var category
 
 
 func get_total_time_to_grow() -> int:
